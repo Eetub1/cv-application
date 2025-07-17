@@ -3,11 +3,27 @@ html, body {
   padding: 0;
 }
 
-div {
-    border: 1px solid red;
-}
-
 #page {
   width: 100vw;
   height: 100vh;
+  display: flex;
+}
+
+#addInfo {
+  background-color: blue;
+  width: 500px;
+  min-width: 250px;
+}
+
+#cvContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cv {
+  background-color: black;
+  height: 95%;
+  aspect-ratio: 9/14;
 }
