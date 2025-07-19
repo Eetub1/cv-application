@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PersonalInfoForm from "./PersonalInfoForm.jsx";
 import ExperienceForm from './ExperienceForm.jsx';
+import EducationForm from './EducationForm.jsx';
 
 function AddInfo({cvState, setCvState}) {
     const [infoForm, setInfoForm] = useState(null)
@@ -10,9 +11,9 @@ function AddInfo({cvState, setCvState}) {
             case "personal":
                 return <PersonalInfoForm setCvState={setCvState}/>
             case "experience":
-                return <ExperienceForm/>
+                return <ExperienceForm setCvState={setCvState}/>
             case "education":
-                return <div>Placeholder 2</div>
+                return <EducationForm setCvState={setCvState}/>
             case "projects":
                 return <div>Placeholder 3</div>
             case "skills":
