@@ -4,10 +4,18 @@ import AddInfo from './components/AddInfo.jsx'
 import Cv from './components/Cv.jsx'
 
 function App() {
+  const [cvState, setCvState] = useState({
+    personalInfo: {},
+    experience: [],
+    education: [],
+    projects: [],
+    skills: [],
+  });
+
   return (
     <div id="page">
-      <AddInfo/>
-      <Cv/>
+      <AddInfo cvState={cvState} setCvState={setCvState}/>
+      <Cv cvState={cvState}/>
     </div>
   )
 }
