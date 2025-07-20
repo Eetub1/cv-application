@@ -1,6 +1,22 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(227, 234, 235);
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+}
+
+h1, h2, h3, p {
+  padding: 0;
+  margin: 0;
+}
+
+button:hover {
+  background-color: aqua;
 }
 
 #page {
@@ -10,10 +26,25 @@ html, body {
 }
 
 #addInfo {
-  border: 1px solid blue;
-  width: 500px;
+  background-color: rgb(171, 206, 206);
+  width: 370px;
   min-width: 250px;
 }
+
+#formContainer {
+  margin-top: 1em;
+}
+
+#buttonsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.showFormButton {
+  min-width: 120px;
+}
+
+/*CV*/
 
 #cvContainer {
   width: 100%;
@@ -23,26 +54,96 @@ html, body {
 }
 
 #cv {
-  border: 1px solid red;
+  background-color: white;
   height: 95%;
-  aspect-ratio: 9/13;
+  aspect-ratio: 9/10;
   display: flex;
   justify-content: center;
 }
 
 #cvMain {
-  border: 1px solid green;
-  width: 80%;
+  width: 85%;
 }
+
+/*Personal info section*/
 
 #personalInfoSection {
-  border: 1px solid red;
   width: 100%;
-  height: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/*Work experience section*/
+
 #workExperienceSection {
-  border: 1px solid red;
   width: 100%;
-  height: 10%;
+}
+
+#companyAndDateContainer > p {
+  display: inline-block;
+}
+
+#companyAndDateContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.workBlock {
+  margin-bottom: 0.5rem;
+}
+
+#companyPara {
+  font-weight: bold;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+/*Education section*/
+
+#schoolAndDateContainer, #degreeAndGpaContainer >  p {
+  display: inline-block;
+}
+
+#schoolAndDateContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#degreeAndGpaContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.educationBlock {
+  margin-bottom: 0.5rem;
+}
+
+/*Project section*/
+
+.projectBlock {
+  margin-bottom: 0.5rem;
+}
+
+/*Skills section*/
+
+#workExperienceHeaderDiv, #educationHeaderDiv, #showSkillsHeaderDiv, #projectsHeaderDiv {
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form > button {
+  flex: 0 0 auto;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
 }

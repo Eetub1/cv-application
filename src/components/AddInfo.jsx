@@ -2,8 +2,10 @@ import { useState } from 'react';
 import PersonalInfoForm from "./PersonalInfoForm.jsx";
 import ExperienceForm from './ExperienceForm.jsx';
 import EducationForm from './EducationForm.jsx';
+import SkillsForm from './SkillsForm.jsx'
+import ProjectsForm from './ProjectsForm.jsx'
 
-function AddInfo({cvState, setCvState}) {
+function AddInfo({setCvState}) {
     const [infoForm, setInfoForm] = useState(null)
 
     function showForm() {
@@ -15,22 +17,32 @@ function AddInfo({cvState, setCvState}) {
             case "education":
                 return <EducationForm setCvState={setCvState}/>
             case "projects":
-                return <div>Placeholder 3</div>
+                return <ProjectsForm setCvState={setCvState}/>
             case "skills":
-                return <div>Placeholder 4</div>
+                return <SkillsForm setCvState={setCvState}/>
             default:
-                return <div>defaultti</div>
+                return <div>Select a section to start making your cv!</div>
         }
     }
 
     return (
         <div id="addInfo">
             <div id="buttonsContainer">
-                <button onClick={() => {setInfoForm("personal")}}>Personal Info</button>
-                <button onClick={() => {setInfoForm("experience")}}>Work Experience</button>
-                <button onClick={() => {setInfoForm("education")}}>Education</button>
-                <button onClick={() => {setInfoForm("projects")}}>Projects</button>
-                <button onClick={() => {setInfoForm("skills")}}>Skills</button>
+                <div>
+                    <button className="showFormButton" onClick={() => { setInfoForm("personal") }}>Personal Info</button>
+                </div>
+                <div>
+                    <button className="showFormButton" onClick={() => { setInfoForm("experience") }}>Work Experience</button>
+                </div>
+                <div>
+                    <button className="showFormButton" onClick={() => { setInfoForm("education") }}>Education</button>
+                </div>
+                <div>
+                    <button className="showFormButton" onClick={() => { setInfoForm("projects") }}>Projects</button>
+                </div>
+                <div>
+                    <button className="showFormButton" onClick={() => { setInfoForm("skills") }}>Skills</button>
+                </div>
                 <div id="formContainer">{showForm()}</div>
             </div>
         </div>

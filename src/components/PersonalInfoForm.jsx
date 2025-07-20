@@ -3,6 +3,7 @@ import { useState } from 'react';
 function PersonalInfoForm({setCvState}) {
     const [formData, setFormData] = useState({
         fullName: "",
+        location: "",
         email: "",
         phone: "",
     })
@@ -14,6 +15,7 @@ function PersonalInfoForm({setCvState}) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    e.target.reset()
     setCvState(prev => ({
       ...prev,
       personalInfo: formData,
@@ -23,11 +25,16 @@ function PersonalInfoForm({setCvState}) {
     return (
         <div id="personalInfoForm" className="form">
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form">
 
                     <div className="formRow">
                         <label htmlFor="">Full name</label>
                         <input type="text" name="fullName" onChange={handleChange} />
+                    </div>
+
+                    <div className="formRow">
+                        <label htmlFor="">Location</label>
+                        <input type="text" name="location" onChange={handleChange} />
                     </div>
 
                     <div className="formRow">
@@ -40,7 +47,9 @@ function PersonalInfoForm({setCvState}) {
                         <input type="text" name="phone" onChange={handleChange} />
                     </div>
 
-                    <button type="submit">Send</button>
+                    <div className="formButtonContainer">
+                        <button type="submit">Add</button>
+                    </div>
 
                 </div>
             </form>

@@ -15,6 +15,7 @@ function ExperienceForm({setCvState}) {
 
     function handleSubmit(e) {
     e.preventDefault();
+    e.target.reset()
     setCvState(prev => ({
         ...prev, 
         experience: [...prev.experience, formData]
@@ -24,7 +25,7 @@ function ExperienceForm({setCvState}) {
     return (
         <div id="experienceForm" className="form">
             <form action="#" onSubmit={handleSubmit}>
-                <div>
+                <div className="form">
 
                     <div className="formRow">
                         <label htmlFor="">Date</label>
@@ -43,10 +44,12 @@ function ExperienceForm({setCvState}) {
 
                     <div className="formRow">
                         <label htmlFor="">Description</label>
-                        <input type="text" name="description" onChange={handleChange}/>
+                        <textarea type="text" name="description" onChange={handleChange}></textarea>
                     </div>
 
-                    <button type="submit">Send</button>
+                    <div className="formButtonContainer">
+                        <button type="submit">Add</button>
+                    </div>
 
                 </div>
             </form>

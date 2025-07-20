@@ -1,27 +1,19 @@
+import ShowWorkExperience from './ShowWorkExperience.jsx'
+import ShowPersonalInfo from './ShowPersonalInfo.jsx'
+import ShowEducation from './ShowEducation.jsx'
+import ShowSkills from './ShowSkills.jsx'
+import ShowProjects from './ShowProjects.jsx'
 
 function Cv({cvState}) {
-    const name = cvState.personalInfo.fullName
-    const email = cvState.personalInfo.email
-    const phone = cvState.personalInfo.phone
-
-    //tästä varmaan voisi tehdä oman komponentin joka palauttaa jsx:ää paremmassa 
-    //muodossa
-    function showWorkExperience() {
-        let workExp = ""
-        if (cvState.experience.length > 0) {
-            cvState.experience.forEach(exp => {
-                workExp += `${exp.date} ${exp.company} ${exp.title} ${exp.description}\n`
-            })
-        }
-        return workExp
-    }
-
     return (
         <div id="cvContainer">
             <div id="cv">
                 <div id="cvMain">
-                    <div id="personalInfoSection">{`${name} ${email} ${phone}`}</div>
-                    <div id="workExperienceSection">{showWorkExperience()}</div>
+                    <div id="personalInfoSection">{<ShowPersonalInfo cvState={cvState}/>}</div>
+                    <div id="workExperienceSection">{<ShowWorkExperience cvState={cvState}/>}</div>
+                    <div id="EducationSection">{<ShowEducation cvState={cvState}/>}</div>
+                    <div id="ProjectsSection">{<ShowProjects cvState={cvState}/>}</div>
+                    <div id="SkillsSection">{<ShowSkills cvState={cvState}/>}</div>
                 </div>
             </div>
         </div>
