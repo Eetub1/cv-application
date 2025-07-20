@@ -12,7 +12,7 @@ function ShowProjects({cvState}) {
             </>
         )
     }
-    return (<><p>moi</p></>)
+    return (<><p></p></>)
 }
 
 function CreateProjectBlock({project}) {

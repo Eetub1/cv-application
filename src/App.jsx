@@ -3,7 +3,7 @@ import './styles/App.css'
 import AddInfo from './components/AddInfo.jsx'
 import Cv from './components/Cv.jsx'
 
-function App() {
+/*function App() {
   const [cvState, setCvState] = useState({
     personalInfo: {
       fullName: "Eetu Oinonen",
@@ -42,6 +42,23 @@ function App() {
     skills: {
       skills: "HTML, CSS, JavaScript, React, Node.js, Express.js, MongoDB, PostgreSQL, Git, Docker, REST APIs, GraphQL, Jest, AWS, TypeScript"
     },
+  });
+
+  return (
+    <div id="page">
+      <AddInfo setCvState={setCvState}/>
+      <Cv cvState={cvState}/>
+    </div>
+  )
+}*/
+
+function App() {
+  const [cvState, setCvState] = useState({
+    personalInfo: {},
+    experience: [],
+    education: [],
+    projects: [],
+    skills: {},
   });
 
   return (

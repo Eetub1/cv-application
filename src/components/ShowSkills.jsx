@@ -1,7 +1,7 @@
 
 function showSkills({cvState}) {
 
-    if (cvState.skills) {
+    if (cvState.skills.skills) {
         return (
         <>
             <div id="showSkillsHeaderDiv">
